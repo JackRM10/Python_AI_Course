@@ -1,9 +1,9 @@
 import random
 
 #Constants
-TARGET_PHRASE ="Hello, World!" #The target phrase to be matched
-POPULATION_SIZE = 100 #Number of individuals in the population
-MUTATION_RATE = 0.01 #Probability of muttation
+TARGET_PHRASE ="I love The Tech Academy!" #The target phrase to be matched
+POPULATION_SIZE = 250 #Number of individuals in the population
+MUTATION_RATE = 0.02 #Probability of muttation
 
 #Generate initial population
 def generate_population():
@@ -57,18 +57,18 @@ def genetic_algorithm():
     while True:
         print(f"Generation {generation} - Best Fit: {max(population, key=calculate_fitness)}")
     
-    if TARGET_PHRASE in population:
-        break
+        if TARGET_PHRASE in population:
+            break
 
-    new_population = []
-    for _ in range(POPULATION_SIZE // 2):
-        parents = select_parents(population)
-        offspirng = crossover(parents)
-        mutated_offspring = mutate(offspring)
-        new_population.extend([offspring, mutated_offspring])
+        new_population = []
+        for _ in range(POPULATION_SIZE // 2):
+            parents = select_parents(population)
+            offspirng = crossover(parents)
+            mutated_offspring = mutate(offspring)
+            new_population.extend([offspring, mutated_offspring])
 
-    population = new_population
-    generation += 1
+        population = new_population
+        generation += 1
 
     #Run the genetic algorithm
     genetic_algorithm()
