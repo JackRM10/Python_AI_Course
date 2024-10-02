@@ -2,7 +2,7 @@ import numpy as np
 import skfuzzy as fuzz
 
 # Input variables
-x = np.arange(0, 11, 1) # Inputrange from 0 to 10
+x = np.arange(0, 11, 1) # Input range from 0 to 10
 
 #Define fuzzy sets for the input variable
 low = fuzz.trimf(x, [0, 0, 5]) #Triangular fuzzy set for low values
